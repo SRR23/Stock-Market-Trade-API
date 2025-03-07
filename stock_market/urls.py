@@ -14,7 +14,7 @@ urlpatterns = [
     path("json-data/", get_trade_data, name="json-data"),  # JSON model API
     path("json-data/trade-code/", get_trade_codes, name="trade-code"),  # JSON model API
     path(
-        "api/trades/trade-code/",
+        "trades/trade-code/",
         UniqueTradeCodesView.as_view(),
         name="unique-trade-codes",
     ),
