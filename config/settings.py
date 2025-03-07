@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'stock_market',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -125,6 +126,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',  # Django Filters for advanced filtering
+        'rest_framework.filters.SearchFilter',  # SearchFilter for simple search queries
+    ),
+    # other settings...
+}
 
 # Allow React frontend access
 CORS_ALLOW_ALL_ORIGINS = True
